@@ -43,10 +43,11 @@
     </div>
     <div class="about-content">
         <h2 class="heading">About <span>Me</span></h2>
-        <h3>Front-end Developer</h3>
+        <h3> <span class="multi">FullStack Developer</span></h3>
         <p>I have skills in HTML CSS and Javascript
             I am well versed with the ASP.NET Framework
-            
+            I am currently learning ML and perfecting my skills using other frameworks
+            My end goal is to be both a full stack developer and a Machine Learning Engineer
         </p>
         <a href="" class="btnCV">Read More</a>
     </div>
@@ -63,7 +64,7 @@
         </div>
         <div class="services-box">
             <i class='bx bxs-paint' ></i>
-            <h3>Graphical Design</h3>
+            <h3>UI/UX Design</h3>
             <p>I offer development o graphical representation of projects</p>
             <a href="" class="btnCV">Read More</a>
 
@@ -91,15 +92,23 @@
     <h2 class="heading">Contact <span>Me</span></h2>
     <form action="#">
         <div class="input-box">
-            <input type="text" placeholder="Full Name">
-            <input type="email" placeholder="Email Address">
+            <input type="text" id="Name"  placeholder="Full Name" class="item">
+            <div class="errortxt">Can't send without name</div>
+            <input type="email" id="email" name="Email" placeholder="Email Address" class="item">
+            <div class="errortxt">Can't send without email</div>
+
         </div>
         <div class="input-box">
-            <input type="number" placeholder="Mobile Number">
-            <input type="text" placeholder="Email Subject">
+            <input type="number"   id="phone" placeholder="Mobile Number" class="item">
+            <div class="errortxt">Can't send without phone number</div>
+
+            <input type="text" name="Subject" id="subject" placeholder="Email Subject" class="item">
+            <div class="errortxt">Can't send without subject</div>
+
         </div>
-        <textarea name="" id="" cols="30" rows="10" placeholder="Your Meassage"></textarea>
-    <input type="submit"  value="Send Message" class="btnCV">
+        <textarea name="Message" id="message" cols="30" rows="10" placeholder="Your Meassage" class="item"></textarea>
+        <div class="errortxt">Message can't be empty</div>
+    <input type="submit" id="btnsend"  value="Send Message" class="btnCV">
     </form>
 
  </section>
@@ -113,6 +122,8 @@
  </footer>
  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
  <script src="https://unpkg.com/scrollreveal"></script>
- <script src="Assets/Nodes/work.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ <script src="https://smtpjs.com/v3/smtp.js"></script>
+<script src="Assets/Nodes/work.js"></script>
  </body>
 </html>

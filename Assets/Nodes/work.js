@@ -45,23 +45,50 @@ backDelay:1000,
 loop:true
 });
 
-let btnsend=document.getElementById('btnsend');
-let name=document.getElementById('name').value;
-let email=document.getElementById('email').value;
-let phone=document.getElementById('phone-number').value;
-let subject=document.getElementById('subject').value;
-let mess=document.getElementById('message').value;
-let body='Name:'+name+'<br/>'+'Email:'+email+'<br/>'+'Phone:'+phone+'<br/>'+'Subject:'+subject+'<br/>'+mess;
-btnsend.addEventListener('click',function(e){
-e.preventDefault();
-Email.send({
-    Host : "smtp.gmail.com",
-    Username : "tshivhulafhulufhelo@gmail.com",
-    Password : "vyobisotdnljljjn",
-    To : 'tshivhulafhulufhelo@gmail.com',
-    From : email,
-    Subject : subject,
-    Body : body
-}).then(
-  message => alert(message)
-);});
+const form=document.querySelector("form")
+const Name=document.getElementById("Name")
+const email=document.getElementById("email");
+const phone=document.getElementById("phone")
+const Subject=document.getElementById("subject")
+const Message=document.getElementById("message")
+
+
+function sendMail(){
+    const body= "Name:"+Name.value+"<br>Email:"+ email.value+"<br> Contact:"+phone.value+"<br> Message:"+Message.value;
+
+    Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "tshivhulafhulufhelo@gmail.com",
+        Password : "4743F30B4EAFF7C2CF845A2B927BA3BABD30",
+        To : "tshivhulafhulufhelo@gmail.com",
+        From :"tshivhulafhulufhelo@gmail.com" ,
+        Subject : Subject.value,
+        Body : body
+    }).then(
+      message =>{ if(message=="OK"){
+        Swal.fire({
+            title: "Congratulations!",
+            text: "Your message has been sent!",
+            icon: "success"
+          });
+
+      }
+    }
+    ); 
+}
+
+function checkInputs(){
+    const items=document.querySelector(".item");
+    for(const item of items){
+        if(item.value==""){
+            item.classList.add("error");
+            item.parentElement.classList.add("error");
+            
+        }
+    }
+    }
+form.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    sendMail();
+    //checkInputs();
+});

@@ -105,6 +105,12 @@ span{
         transform: translateY(0);
     }
 }
+.contact .errortxt{
+  color: red;
+  font-size: 14.5px;
+  text-align: left;
+ display: none;
+}
 .home-content p{
     font-size: 1.6rem;
 }
@@ -224,6 +230,7 @@ margin-bottom: 2rem;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+   
 
 }
 
